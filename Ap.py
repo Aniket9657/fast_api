@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+api = FastAPI()
 
 all_items=[
     {"id":1,"laptop": "Dell","price":60000},
@@ -11,16 +11,21 @@ all_items=[
 
 ]
 
-@app.get('/')
+@api.get('/')
 def index():
     return {"message":" Sayonara Anna  "}
 
 
-@app.get('/items/"{item_id}')
+@api.get('/items/"{item_id}')
 async def get_items(id:int):
     for item in  all_items:
         if item["id"] ==id:
             return item 
     return {"message": "Item not found"}
         
-
+@api.get('/items/')
+def get_all_items(first_n=None):
+    if first_n:
+        return all_items[:first_n]
+    else:
+      return all_items
