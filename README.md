@@ -8,6 +8,6 @@ A simple and scalable FastAPI project showcasing REST APIs with Python.
 
 📄 CRUD APIs (Create, Read, Update, Delete)
 
-🗄️ Database integration (SQLite / PostgreSQL / MySQL — update as per your setup)
+🗄️ Database integration (SQLite / PostgreSQL / MySQL)
 
 🔐 Validation using Pydantic models
